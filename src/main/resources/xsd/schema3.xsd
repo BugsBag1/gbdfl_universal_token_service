@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="http://document.persistence.interactive.nat" xmlns:ns1="http://dictionaries.persistence.interactive.nat" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:import namespace="http://dictionaries.persistence.interactive.nat" schemaLocation="schema4.xsd"/>
+
+  <xs:complexType name="Document">
+    <xs:sequence>
+      <xs:element name="type" type="ns1:DocumentType"/>
+      <xs:element name="number" type="xs:string"/>
+      <xs:element name="series" type="xs:string" minOccurs="0"/>
+      <xs:element name="beginDate" type="xs:date"/>
+      <xs:element name="endDate" type="xs:date" minOccurs="0"/>
+      <xs:element name="issueOrganization" type="ns1:DocumentOrganization"/>
+      <xs:element name="status" type="ns1:DocumentInvalidity"/>
+      <xs:element name="invalidityDate" type="xs:date" minOccurs="0"/>
+      <xs:element name="surname" type="xs:string" minOccurs="0"/>
+      <xs:element name="name" type="xs:string" minOccurs="0"/>
+      <xs:element name="patronymic" type="xs:string" minOccurs="0"/>
+      <xs:element name="birthDate" type="xs:date"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+

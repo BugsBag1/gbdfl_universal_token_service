@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="http://person.persistence.interactive.nat" xmlns:ns2="http://document.persistence.interactive.nat" xmlns:ns1="http://dictionaries.persistence.interactive.nat" xmlns:tns="http://person.persistence.interactive.nat" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:import namespace="http://dictionaries.persistence.interactive.nat" schemaLocation="schema4.xsd"/>
+
+  <xs:import namespace="http://document.persistence.interactive.nat" schemaLocation="schema3.xsd"/>
+
+  <xs:complexType name="Person">
+    <xs:sequence>
+      <xs:element name="iin" type="xs:string"/>
+      <xs:element name="surname" type="xs:string" minOccurs="0"/>
+      <xs:element name="name" type="xs:string" minOccurs="0"/>
+      <xs:element name="patronymic" type="xs:string" minOccurs="0"/>
+      <xs:element name="engFirstName" type="xs:string" minOccurs="0"/>
+      <xs:element name="engSurname" type="xs:string" minOccurs="0"/>
+      <xs:element name="birthDate" type="xs:date"/>
+      <xs:element name="deathDate" type="xs:date" minOccurs="0"/>
+      <xs:element name="gender" type="ns1:Gender"/>
+      <xs:element name="nationality" type="ns1:Nationality"/>
+      <xs:element name="citizenship" type="ns1:Country"/>
+      <xs:element name="lifeStatus" type="ns1:PersonStatus"/>
+      <xs:element name="imprisonedStatus" type="tns:PersonImprisoneStatus" minOccurs="0"/>
+      <xs:element name="birthCertificate" type="tns:Certificate" minOccurs="0"/>
+      <xs:element name="deathCertificate" type="tns:Certificate" minOccurs="0"/>
+      <xs:element name="birthPlace" type="tns:BirthPlace"/>
+      <xs:element name="regAddress" type="tns:RegAddress" minOccurs="0"/>
+      <xs:element name="personCapableStatus" type="tns:PersonCapableStatus" minOccurs="0"/>
+      <xs:element name="missingStatus" type="tns:MissingStatus" minOccurs="0"/>
+      <xs:element name="disappearStatus" type="tns:DisappearStatus" minOccurs="0"/>
+      <xs:element name="excludeStatus" type="tns:PersonExcludeStatus" minOccurs="0"/>
+      <xs:element name="repatriationStatus" type="tns:personRepatriationStatus" minOccurs="0"/>
+      <xs:element name="documents" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="document" type="ns2:Document" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="addresses" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="address" type="tns:Address" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="removed" type="xs:boolean" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="PersonImprisoneStatus">
+    <xs:sequence>
+      <xs:element name="imprisonedStatus" type="ns1:ImprisoneStatus"/>
+      <xs:element name="imprisonedBeginDate" type="xs:date" minOccurs="0"/>
+      <xs:element name="imprisonedEndDate" type="xs:date" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Certificate">
+    <xs:sequence>
+      <xs:element name="number" type="xs:string"/>
+      <xs:element name="beginDate" type="xs:date" minOccurs="0"/>
+      <xs:element name="issueOrganisation" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="BirthPlace">
+    <xs:sequence>
+      <xs:element name="country" type="ns1:Country" minOccurs="0"/>
+      <xs:element name="district" type="ns1:District" minOccurs="0"/>
+      <xs:element name="region" type="ns1:Region" minOccurs="0"/>
+      <xs:element name="foreignData" type="tns:ForeignData" minOccurs="0"/>
+      <xs:element name="city" type="xs:string" minOccurs="0"/>
+      <xs:element name="birthTeCodeAR" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ForeignData">
+    <xs:sequence>
+      <xs:element name="districtName" type="xs:string" minOccurs="0"/>
+      <xs:element name="regionName" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="RegAddress">
+    <xs:sequence>
+      <xs:element name="country" type="ns1:Country" minOccurs="0"/>
+      <xs:element name="district" type="ns1:District" minOccurs="0"/>
+      <xs:element name="region" type="ns1:Region" minOccurs="0"/>
+      <xs:element name="foreignData" type="tns:ForeignData" minOccurs="0"/>
+      <xs:element name="city" type="xs:string" minOccurs="0"/>
+      <xs:element name="street" type="xs:string" minOccurs="0"/>
+      <xs:element name="building" type="xs:string" minOccurs="0"/>
+      <xs:element name="corpus" type="xs:string" minOccurs="0"/>
+      <xs:element name="flat" type="xs:string" minOccurs="0"/>
+      <xs:element name="beginDate" type="xs:date" minOccurs="0"/>
+      <xs:element name="endDate" type="xs:date" minOccurs="0"/>
+      <xs:element name="status" type="ns1:AddressStatus" minOccurs="0"/>
+      <xs:element name="invalidity" type="ns1:AddressInvalidity" minOccurs="0"/>
+      <xs:element name="arCode" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="PersonCapableStatus">
+    <xs:sequence>
+      <xs:element name="capableStatus" type="ns1:CapableStatus"/>
+      <xs:element name="capableDate" type="xs:date"/>
+      <xs:element name="capableEndDate" type="xs:date" minOccurs="0"/>
+      <xs:element name="capableNumber" type="xs:string"/>
+      <xs:element name="court" type="ns1:Court"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="MissingStatus">
+    <xs:sequence>
+      <xs:element name="missing" type="xs:boolean"/>
+      <xs:element name="missingDate" type="xs:date"/>
+      <xs:element name="missingEndDate" type="xs:date" minOccurs="0"/>
+      <xs:element name="missingNumber" type="xs:string"/>
+      <xs:element name="gpTerritorial" type="ns1:GpTerritorial"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="DisappearStatus">
+    <xs:sequence>
+      <xs:element name="disappear" type="xs:boolean"/>
+      <xs:element name="disappearDate" type="xs:date"/>
+      <xs:element name="disappearEndDate" type="xs:date" minOccurs="0"/>
+      <xs:element name="disappearNumber" type="xs:string"/>
+      <xs:element name="gpTerritorial" type="ns1:GpTerritorial"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="PersonExcludeStatus">
+    <xs:sequence>
+      <xs:element name="excludeReason" type="ns1:ExcludeReason"/>
+      <xs:element name="excludeReasonDate" type="xs:date" minOccurs="0"/>
+      <xs:element name="excludeDate" type="xs:date" minOccurs="0"/>
+      <xs:element name="excludeParticipant" type="ns1:Participant" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="personRepatriationStatus">
+    <xs:sequence>
+      <xs:element name="repatriationStatus" type="ns1:repatriationStatus" minOccurs="0"/>
+      <xs:element name="repatriationDate" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="repatriationEndDate" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="repatriationNumber" type="xs:string" minOccurs="0"/>
+      <xs:element name="repatriationOrg" type="ns1:repatriationOrg" minOccurs="0"/>
+      <xs:element name="repatriationReason" type="ns1:repatriationReason" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Address">
+    <xs:sequence>
+      <xs:element name="type" type="ns1:AddressType"/>
+      <xs:element name="country" type="ns1:Country" minOccurs="0"/>
+      <xs:element name="district" type="ns1:District" minOccurs="0"/>
+      <xs:element name="region" type="ns1:Region" minOccurs="0"/>
+      <xs:element name="foreignData" type="tns:ForeignData" minOccurs="0"/>
+      <xs:element name="city" type="xs:string" minOccurs="0"/>
+      <xs:element name="street" type="xs:string" minOccurs="0"/>
+      <xs:element name="building" type="xs:string" minOccurs="0"/>
+      <xs:element name="corpus" type="xs:string" minOccurs="0"/>
+      <xs:element name="flat" type="xs:string" minOccurs="0"/>
+      <xs:element name="beginDate" type="xs:date" minOccurs="0"/>
+      <xs:element name="endDate" type="xs:date" minOccurs="0"/>
+      <xs:element name="arCode" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+

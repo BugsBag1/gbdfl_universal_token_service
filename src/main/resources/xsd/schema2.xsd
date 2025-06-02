@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="http://message.persistence.interactive.nat" xmlns:ns2="http://person.persistence.interactive.nat" xmlns:ns1="http://dictionaries.persistence.interactive.nat" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:import namespace="http://dictionaries.persistence.interactive.nat" schemaLocation="schema4.xsd"/>
+
+  <xs:import namespace="http://person.persistence.interactive.nat" schemaLocation="schema1.xsd"/>
+
+  <xs:complexType name="Request">
+    <xs:sequence>
+      <xs:element name="messageId" type="xs:string"/>
+      <xs:element name="messageDate" type="xs:dateTime"/>
+      <xs:element name="senderCode" type="xs:string"/>
+      <xs:element name="iin" type="xs:string" minOccurs="0"/>
+      <xs:element name="surname" type="xs:string" minOccurs="0"/>
+      <xs:element name="name" type="xs:string" minOccurs="0"/>
+      <xs:element name="patronymic" type="xs:string" minOccurs="0"/>
+      <xs:element name="birthDate" type="xs:date" minOccurs="0"/>
+      <xs:element name="birthDateFrom" type="xs:date" minOccurs="0"/>
+      <xs:element name="birthDateTo" type="xs:date" minOccurs="0"/>
+      <xs:element name="documentNumber" type="xs:string" minOccurs="0"/>
+      <xs:element name="kdpToken" type="xs:string"/>
+      <xs:element name="publicKey" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Response">
+    <xs:sequence>
+      <xs:element name="messageId" type="xs:string"/>
+      <xs:element name="messageDate" type="xs:dateTime"/>
+      <xs:element name="requestId" type="xs:string"/>
+      <xs:element name="sender" type="ns1:Participant"/>
+      <xs:element name="receiver" type="ns1:Participant"/>
+      <xs:element name="messageResult" type="ns1:MessageResult"/>
+      <xs:element name="persons" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="person" type="ns2:Person" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+

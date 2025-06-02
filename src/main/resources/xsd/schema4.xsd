@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="http://dictionaries.persistence.interactive.nat" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:complexType name="Participant">
+    <xs:sequence>
+      <xs:element name="code" type="xs:string"/>
+      <xs:element name="nameRu" type="xs:string"/>
+      <xs:element name="nameKz" type="xs:string"/>
+      <xs:element name="changeDate" type="xs:dateTime" nillable="true" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="MessageResult">
+    <xs:sequence>
+      <xs:element name="code" type="xs:string"/>
+      <xs:element name="nameRu" type="xs:string"/>
+      <xs:element name="nameKz" type="xs:string"/>
+      <xs:element name="changeDate" type="xs:dateTime" nillable="true" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Gender">
+    <xs:sequence>
+      <xs:element name="code" type="xs:string"/>
+      <xs:element name="nameRu" type="xs:string"/>
+      <xs:element name="nameKz" type="xs:string"/>
+      <xs:element name="changeDate" type="xs:dateTime" nillable="true" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Nationality">
+    <xs:sequence>
+      <xs:element name="code" type="xs:string"/>
+      <xs:element name="nameRu" type="xs:string"/>
+      <xs:element name="nameKz" type="xs:string"/>
+      <xs:element name="changeDate" type="xs:dateTime" nillable="true" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Country">
+    <xs:sequence>
+      <xs:element name="code" type="xs:string"/>
+      <xs:element name="nameRu" type="xs:string"/>
+      <xs:element name="nameKz" type="xs:string"/>
+      <xs:element name="changeDate" type="xs:dateTime" nillable="true" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="PersonStatus">
+    <xs:sequence>
+      <xs:element name="code" type="xs:string"/>
+      <xs:element name="nameRu" type="xs:string"/>
+      <xs:element name="nameKz" type="xs:string"/>
+      <xs:element name="changeDate" type="xs:dateTime" nillable="true" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ImprisoneStatus">
+    <xs:sequence>
+      <xs:element name="code" type="xs:string"/>
+      <xs:element name="nameRu" type="xs:string"/>
+      <xs:element name="nameKz" type="xs:string"/>
+      <xs:element name="changeDate" type="xs:dateTime" nillable="true" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="District">
+    <xs:sequence>
+      <xs:element name="code" type="xs:string"/>
+      <xs:element name="nameRu" type="xs:string"/>
+      <xs:element name="nameKz" type="xs:string"/>
+      <xs:element name="changeDate" type="xs:dateTime" nillable="true" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Region">
+    <xs:sequence>
+      <xs:element name="code" type="xs:string"/>
+      <xs:element name="nameRu" type="xs:string"/>
+      <xs:element name="nameKz" type="xs:string"/>
+      <xs:element name="changeDate" type="xs:dateTime" nillable="true" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="AddressStatus">
+    <xs:sequence>
+      <xs:element name="code" type="xs:string"/>
+      <xs:element name="nameRu" type="xs:string"/>
+      <xs:element name="nameKz" type="xs:string"/>
+      <xs:element name="changeDate" type="xs:dateTime" nillable="true" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="AddressInvalidity">
+    <xs:sequence>
+      <xs:element name="code" type="xs:string"/>
+      <xs:element name="nameRu" type="xs:string"/>
+      <xs:element name="nameKz" type="xs:string"/>
+      <xs:element name="changeDate" type="xs:dateTime" nillable="true" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="CapableStatus">
+    <xs:sequence>
+      <xs:element name="code" type="xs:string"/>
+      <xs:element name="nameRu" type="xs:string"/>
+      <xs:element name="nameKz" type="xs:string"/>
+      <xs:element name="changeDate" type="xs:dateTime" nillable="true" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Court">
+    <xs:sequence>
+      <xs:element name="code" type="xs:string"/>
+      <xs:element name="nameRu" type="xs:string"/>
+      <xs:element name="nameKz" type="xs:string"/>
+      <xs:element name="changeDate" type="xs:dateTime" nillable="true" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="GpTerritorial">
+    <xs:sequence>
+      <xs:element name="code" type="xs:string"/>
+      <xs:element name="nameRu" type="xs:string"/>
+      <xs:element name="nameKz" type="xs:string"/>
+      <xs:element name="changeDate" type="xs:dateTime" nillable="true" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ExcludeReason">
+    <xs:sequence>
+      <xs:element name="code" type="xs:string"/>
+      <xs:element name="nameRu" type="xs:string"/>
+      <xs:element name="nameKz" type="xs:string"/>
+      <xs:element name="changeDate" type="xs:dateTime" nillable="true" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="repatriationStatus">
+    <xs:sequence>
+      <xs:element name="code" type="xs:string"/>
+      <xs:element name="nameRu" type="xs:string"/>
+      <xs:element name="nameKz" type="xs:string"/>
+      <xs:element name="changeDate" type="xs:dateTime" nillable="true" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="repatriationOrg">
+    <xs:sequence>
+      <xs:element name="code" type="xs:string"/>
+      <xs:element name="nameRu" type="xs:string"/>
+      <xs:element name="nameKz" type="xs:string"/>
+      <xs:element name="changeDate" type="xs:dateTime" nillable="true" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="repatriationReason">
+    <xs:sequence>
+      <xs:element name="code" type="xs:string"/>
+      <xs:element name="nameRu" type="xs:string"/>
+      <xs:element name="nameKz" type="xs:string"/>
+      <xs:element name="changeDate" type="xs:dateTime" nillable="true" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="DocumentType">
+    <xs:sequence>
+      <xs:element name="code" type="xs:string"/>
+      <xs:element name="nameRu" type="xs:string"/>
+      <xs:element name="nameKz" type="xs:string"/>
+      <xs:element name="changeDate" type="xs:dateTime" nillable="true" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="DocumentOrganization">
+    <xs:sequence>
+      <xs:element name="code" type="xs:string"/>
+      <xs:element name="nameRu" type="xs:string"/>
+      <xs:element name="nameKz" type="xs:string"/>
+      <xs:element name="changeDate" type="xs:dateTime" nillable="true" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="DocumentInvalidity">
+    <xs:sequence>
+      <xs:element name="code" type="xs:string"/>
+      <xs:element name="nameRu" type="xs:string"/>
+      <xs:element name="nameKz" type="xs:string"/>
+      <xs:element name="changeDate" type="xs:dateTime" nillable="true" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="AddressType">
+    <xs:sequence>
+      <xs:element name="code" type="xs:string"/>
+      <xs:element name="nameRu" type="xs:string"/>
+      <xs:element name="nameKz" type="xs:string"/>
+      <xs:element name="changeDate" type="xs:dateTime" nillable="true" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+

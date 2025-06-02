@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- edited with XMLSpy v2013 (http://www.altova.com) by  () -->
+<xs:schema xmlns:ns1="http://message.persistence.interactive.nat" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0">
+	<xs:import namespace="http://message.persistence.interactive.nat" schemaLocation="schema2.xsd"/>
+	<xs:element name="data" type="ns1:Response"/>
+	<xs:element name="request" type="ns1:Request"/>
+</xs:schema>

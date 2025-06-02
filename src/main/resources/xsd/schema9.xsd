@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="http://bip.bee.kz/SyncChannel/v10/Types/Request" xmlns:ns1="http://message.persistence.interactive.nat" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:import namespace="http://message.persistence.interactive.nat" schemaLocation="schema2.xsd"/>
+
+  <xs:complexType name="RequestData">
+    <xs:sequence>
+      <xs:element name="data" type="ns1:Request"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+
