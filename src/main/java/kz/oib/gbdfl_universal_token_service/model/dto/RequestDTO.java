@@ -14,6 +14,8 @@ public class RequestDTO implements Serializable {
     private LocalDateTime messageDate;
     @Schema(description = "Код отправителя")
     private String senderCode;
+    @Schema(description = "ИИН")
+    private String iin;
     @Schema(description = "Токен безопасности")
     private String kdpToken;
     @Schema(description = "Публичный ключ, необходимый для проверки валидности токена безопасности")

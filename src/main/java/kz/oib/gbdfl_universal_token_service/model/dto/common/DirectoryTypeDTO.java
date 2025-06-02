@@ -3,6 +3,8 @@ package kz.oib.gbdfl_universal_token_service.model.dto.common;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 
+import java.time.LocalDateTime;
+
 @Data
 public class DirectoryTypeDTO {
     @Schema(description = "Код")
