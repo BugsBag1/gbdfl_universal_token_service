@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: gbdfl-universal-token-service
+
+
+request-property:
+  service-id: "GBDFLUniversal_token"
+  sender-code: "BaspanaHub"
+  vshep-url: "http://localhost:8080/api/v1/internal/gbdul-report-3005-kdp"
