@@ -11,4 +11,5 @@ public class AppConstants {
     private String serviceId;
     private String senderCode;
     private String vshepUrl;
+    private Short chanelType;
 }

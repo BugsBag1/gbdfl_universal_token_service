@@ -1,0 +1,11 @@
+package kz.oib.gbdfl_universal_token_service.exception;
+
+public class BuisnessException extends RuntimeException{
+    public BuisnessException(String message) {
+        super(message);
+    }
+
+    public BuisnessException(String message, Throwable cause) {
+        super(message, cause);
+    }
+}

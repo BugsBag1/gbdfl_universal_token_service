@@ -7,12 +7,16 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import kz.oib.gbdfl_universal_token_service.model.dto.ResponseDTO;
+import kz.oib.gbdfl_universal_token_service.model.dto.ResponseWrapper;
 import kz.oib.gbdfl_universal_token_service.service.AppService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.parsing.Problem;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import jakarta.validation.constraints.Size;
+
+import java.time.LocalDateTime;
 
 @RestController
 @RequestMapping("/gbdflUniversalToken")
@@ -62,11 +66,17 @@ public class AppController {
             )
     })
     @GetMapping
-    public ResponseDTO getPersonFlByIIN(
+    public ResponseEntity<ResponseWrapper<ResponseDTO>> getPersonFlByIIN(
             @Parameter(description = "ИИН физического лица (необязательный параметр)", required = false)
             @Size(min = 12, max = 12)
             @RequestParam(required = false) String iin
-    ) throws Exception {
-        return appService.getPersonFlByIIN(iin);
+    ) {
+        ResponseDTO responseDTO = appService.getPersonFlByIIN(iin);
+        ResponseWrapper<ResponseDTO> response = ResponseWrapper.<ResponseDTO>builder()
+                .success(true)
+                .timestamp(LocalDateTime.now())
+                .data(responseDTO)
+                .build();
+        return ResponseEntity.ok(response);
     }
 }
